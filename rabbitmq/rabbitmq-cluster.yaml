@@ -1,0 +1,7 @@
+apiVersion: rabbitmq.com/v1beta1
+kind: RabbitmqCluster
+metadata:
+  name: lsc-rmq
+  namespace: rabbitmq
+spec:
+  replicas: 1
