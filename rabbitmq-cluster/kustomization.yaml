@@ -7,8 +7,9 @@ spec:
   dependsOn:
     - name: rabbitmq-base
   interval: 5m
-  path: "./custom/cluster.yaml"
+  path: "./rabbitmq-cluster/custom/cluster.yaml"
   prune: true
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: rabbitmq
+    namespace: lscsde-config
