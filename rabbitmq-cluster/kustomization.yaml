@@ -1,13 +1,14 @@
-apiVersion: kustomize.config.k8s.io/v1beta1
+apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
   name: rabbitmq-cluster
   namespace: rabbitmq
-namespace: rabbitmq
-resources:
-  - cluster.yaml
-
 spec:
   dependsOn:
-  - name: rabbitmq-base
-    namespace: rabbitmq
+    - name: rabbitmq-base
+  interval: 5m
+  path: "./custom/cluster.yaml"
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
