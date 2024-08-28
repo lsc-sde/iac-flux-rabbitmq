@@ -7,7 +7,7 @@ spec:
   dependsOn:
     - name: rabbitmq-base
   interval: 5m
-  path: "./rabbitmq-cluster/custom/cluster.yaml"
+  path: "./rabbitmq-cluster/custom"
   prune: true
   sourceRef:
     kind: GitRepository
