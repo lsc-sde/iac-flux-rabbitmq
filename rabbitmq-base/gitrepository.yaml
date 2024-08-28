@@ -6,3 +6,5 @@ metadata:
 spec:
   interval: 5m
   url: https://github.com/lsc-sde/iac-flux-rabbitmq
+  ref:
+    branch: release/0.1.9
