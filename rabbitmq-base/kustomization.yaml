@@ -5,6 +5,7 @@ metadata:
   namespace: rabbitmq
 namespace: rabbitmq
 resources:
+  - gitrepository.yaml
   - repository.yaml
   - release.yaml
   - namespace.yaml
