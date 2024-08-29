@@ -2,6 +2,7 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: rabbitmq
+  namespace: rabbitmq
   annotations:
     xlscsde.nhs.uk/dns-record: rabbitmq${environment_dns_suffix}
 spec:
