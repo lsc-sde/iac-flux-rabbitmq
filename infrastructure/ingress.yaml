@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: rabbitmq
+  annotations:
+    xlscsde.nhs.uk/dns-record: rabbitmq${environment_dns_suffix}
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: ${environment_dns_prefix}rabbitmq${environment_dns_suffix}.${private_dnz_zone}
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/"
+        backend:
+          service:
+            name: lsc-rmq
+            port:
+              number: 15672
