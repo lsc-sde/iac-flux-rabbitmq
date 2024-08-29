@@ -4,6 +4,9 @@ metadata:
   name: rabbitmq
   namespace: rabbitmq
   annotations:
+    nginx.ingress.kubernetes.io/ssl-redirect : "true"
+    nginx.ingress.kubernetes.io/force-ssl-redirect : "true"
+    nginx.ingress.kubernetes.io/proxy-body-size: 64m
     xlscsde.nhs.uk/dns-record: rabbitmq${environment_dns_suffix}
 spec:
   ingressClassName: nginx
@@ -18,3 +21,7 @@ spec:
             name: lsc-rmq
             port:
               number: 15672
+  tls:
+  - hosts:
+    - ${environment_dns_prefix}rabbitmq${environment_dns_suffix}.${private_dnz_zone}
+    secretName: ${environment_dns_prefix}rabbitmq${environment_dns_suffix}.${private_dnz_zone}-tls
