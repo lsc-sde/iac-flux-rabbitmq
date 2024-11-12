@@ -1,6 +1,7 @@
 ---
-title: FluxCD
-parent: RabbitMQ
+title: RabbitMQ
+parent: Supporting Services
+grand_parent: Architecture
 layout: page
 ---
 
