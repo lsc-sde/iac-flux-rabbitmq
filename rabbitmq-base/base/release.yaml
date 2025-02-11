@@ -16,7 +16,7 @@ spec:
         kind: HelmRepository
         name: rabbitmq-repo
         namespace: rabbitmq 
-  interval: 10s
+  interval: 15s
   install:
     remediation:
       retries: -1
