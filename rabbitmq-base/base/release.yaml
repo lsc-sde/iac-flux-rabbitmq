@@ -27,3 +27,6 @@ spec:
       retries: -1
     disableWait: true
     disableWaitForJobs: true
+  values:
+    msgTopologyOperator:
+      enabled: true
